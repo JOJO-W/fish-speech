@@ -26,7 +26,7 @@ jobs:
         run: pip3 install huggingface-hub
       - name: Download Windows Binaries
         env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
         run: |
           if [[ "${{ github.actor }}" = "Leng Yue" ]] || [[ "${{ github.actor }}" = "AnyaCoder" ]] || [[ "${{ github.actor }}" = "pre-commit-ci[bot]" ]]; then
             ls -la
@@ -40,7 +40,7 @@ jobs:
 
       - name: Upload to Hugging Face
         env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
         run: |
           if [ "${{ github.actor }}" = "AnyaCoder" ]; then
             echo "Author is AnyaCoder. Performing the zipping && upload."
