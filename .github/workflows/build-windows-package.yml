@@ -9,13 +9,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Remove unnecessary files
-        run: |
-          sudo rm -rf /usr/share/dotnet
-          sudo rm -rf /opt/ghc
-          sudo rm -rf /usr/local/lib/android
-          sudo rm -rf "/usr/local/share/boost"
-          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+      # - name: Remove unnecessary files
+      #   run: |
+      #     sudo rm -rf /usr/share/dotnet
+      #     sudo rm -rf /opt/ghc
+      #     sudo rm -rf /usr/local/lib/android
+      #     sudo rm -rf "/usr/local/share/boost"
+      #     sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - uses: actions/setup-python@v5
         with:
           python-version: 3.12
@@ -47,5 +47,5 @@ jobs:
             zip -qr fish-speech-main-${{ github.run_id }}.zip ./fish-speech
             huggingface-cli upload SpicyqSama007/fish-speech-packed ./fish-speech-main-${{ github.run_id }}.zip fish-speech-main-${{ github.run_id }}.zip
           else
-            echo "Author is not AnyaCoder. No upload performed."
+            echo "Author is not AnyaCoder. No upload performed.  !-DONT CARE-!  "
           fi
