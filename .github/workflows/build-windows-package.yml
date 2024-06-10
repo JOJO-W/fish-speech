@@ -1,9 +1,9 @@
 name: build-windows-package
 
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
   workflow_dispatch:
 jobs:
   deploy:
